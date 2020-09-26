@@ -1,6 +1,6 @@
 # MENdel
 
-This repository contains a python script for running MENTHU and Lindel tools via commandline interface, to generate the MENdel output. It is compatible with Linux, Mac, Windows (using Cygwin), and Windows CMD. In order to run MENdel, it is required that the user has MENTHU-command-line and Lindel cloned locally. Follow the instructions given below to install each of these tools.
+This repository contains python scripts for running MENTHU and Lindel tools via commandline interface, to generate the MENdel output. MENdel is compatible with Linux, Mac, Windows (using Cygwin), and Windows CMD. In order to run MENdel, it is required that the user has MENTHU-command-line and Lindel cloned locally. Follow the instructions given below to install each of these tools.
 
 ```
 mkdir MENdel_root
