@@ -28,7 +28,7 @@ cd MENdel_root
    cd MENdel
    ```
    
-   Alternatively, use the green "Clone or download" button in the upper right corner and choose "Download ZIP"
+   Alternatively, use the green "Code" button in the upper right corner and choose "Download ZIP"
    
    - For Windows users
    
