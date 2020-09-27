@@ -47,7 +47,20 @@ cd MENdel_root
    - For Linux/Mac/Windows using WSL or Cygwin users
    
    ```
-   python MENdelScript.py [outFile] [CRISPR Option] [PAM Sequence] [Distance to DSB] [Overhang] [TALEN Option] [TALEN scheme] [Gen Input Type] [Gen Input] [Score Threshold] [T7 opt] [verbose] [validate]
+   python MENdelScript.py [-o outFile] [-c CRISPR Option] [PAM Sequence] [Distance to DSB] [Overhang] [TALEN Option] [TALEN scheme] [Gen Input Type] [Gen Input] [Score Threshold] [T7 opt] [verbose] [validate]
    ```
    
-"Rscript" tells the system to use ```R``` to execute ```menthu.R``` (or ```menthu-cmd.R``` for Windows CMD).
+   "python" tells the system to use ```python``` to execute ```MENdelScript.py``` (or ```Windows_MENdelScript.py``` for Windows CMD).
+   
+5. **Parameter explanation**
+
+   The parameters are explained below. Each parameter is delimited by a space. Parameter values should not have spaces; if you want to put spaces in the output file name, the name should be in quotes, e.g. "output File.csv". Parameter values (including strings) do not have to be in quotes, except for the output file name exception. All parameters values can be kept to default with the exception of output file name, gen input type and gen input
+   
+   - **outFile** - pass character string file name - The name of the file to output your results to. If using a fasta file with multiple sequences, multiple files will be created, using this as a prefix
+   
+|Parameter|Accepted Values|Default|Explanation|
+|---	|---	|---	|---	|---	|
+|**CRSIPR Option**|T or F|T|Something   	|   	|
+|   	|   	|   	|   	|   	|
+|   	|   	|   	|   	|   	|
+
