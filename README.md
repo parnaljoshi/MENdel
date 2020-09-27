@@ -34,9 +34,9 @@ cd MENdel_root
 
    MENdel-command-line can be run from Unix-like command lines (Linux, Mac, Cygwin on Windows) or Windows CMD. However, due to end-of-line conversion differences between Unix and DOS for MENTHU, **you must use MENdelScript.py on Linux, Mac, and Cygwin, and Windows_MENdelScript.py in Windows CMD**. 
 
-Check to make sure you're using the correct command for your system!
+   Check to make sure you're using the correct command for your system!
 
-MENTHU-command-line can be run using the following syntax:
+   MENTHU-command-line can be run using the following syntax:
    
    - For Windows users
    
