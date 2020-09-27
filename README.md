@@ -19,7 +19,7 @@ cd MENdel_root
    
    Follow instructions at https://github.com/shendurelab/Lindel to install Lindel within the directory MENdel_root
 
-3. **MENdel installation**
+3. **MENdel and required Python packages installation**
 
    Navigate to the previously created directory MENdel_root and follow these instructions to install scripts to run MENdel.
    
@@ -29,6 +29,18 @@ cd MENdel_root
    ```
    
    Alternatively, use the green "Code" button in the upper right corner and choose "Download ZIP"
+   
+   - For Windows users
+   
+   ```
+   Windows_InstallPackages.bat
+   ```
+   
+   - For Linux/Mac/Windows using WSL or Cygwin users
+   
+   ```
+   bash InstallPackages.sh
+   ```
 
 4. **Running MENdel**
 
