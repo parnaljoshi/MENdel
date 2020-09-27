@@ -74,20 +74,20 @@ cd MENdel_root
 
 6. **Examples**
 
-   - SpCas9, Ensembl, Unix OS:
+   - Ensembl, Unix OS:
    
    ```
-   python MENdelScript.py EnsemblExample.csv T NGG -3 0 F 0 ens ENSDART00000011520 1.5 F F F
+   python MENdelScript.py -o EnsemblExample.csv -c T -p NGG -d -3 -oh 0 -to F -ts 0 -g ens -i ENSDART00000011520 -st 1.5 -t7 F -v F -va F
    ```
    
-   - Cas12a, Ensembl, Windows:
+   - Ensembl, Windows:
    
    ```
-   python Windows_MENdelScript.py EnsemblCas12aExample.csv T NGG 18 5 F NA ens ENSDART00000011520 1.0 F F F
+   python Windows_MENdelScript.py -o EnsemblCas12aExample.csv -g ens -i ENSDART00000011520 -st 1.5
    ```
 
-   - CRISPR, GenBank, Mac:
+   - GenBank, Mac:
    
    ```
-   python MENdelScript.py GenBankTalenExample.csv T NGG 0 0 F 0 gb AY214391.1 1.5 F F F
+   python MENdelScript.py -o GenBankTalenExample.csv -g gb -i AY214391.1
    ```
