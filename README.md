@@ -50,7 +50,7 @@ cd MENdel_root
 
    Check to make sure you're using the correct command for your system!
 
-   MENTHU-command-line can be run using the following syntax:
+   MENdel-command-line can be run using the following syntax:
    
    - For Windows users
    
