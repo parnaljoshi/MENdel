@@ -36,7 +36,7 @@ cd MENdel_root
    Windows_InstallPackages.bat
    ```
    
-   Alternatively, double-click on the bathfile to run it.
+   Alternatively, double-click on the .bat file to run it.
    
    - For Linux/Mac/Windows using WSL or Cygwin users
    
