@@ -41,7 +41,7 @@ cd MENdel_root
    - For Windows users
    
    ```
-   python Windows_MENdelScript.py [outFile] [CRISPR Option] [PAM Sequence] [Distance to DSB] [Overhang] [TALEN Option] [TALEN scheme] [Gen Input Type] [Gen Input] [Score Threshold] [T7 opt] [verbose] [validate]
+   python Windows_MENdelScript.py [-o outFile] [-c CRISPR Option] [-p PAM Sequence] [-d Distance to DSB] [-oh Overhang] [-to TALEN Option] [-ts TALEN scheme] [-g Gen Input Type] [-i Gen Input] [-st Score Threshold] [-t7 T7 opt] [-v verbose] [-va validate]
    ```
    
    - For Linux/Mac/Windows using WSL or Cygwin users
@@ -75,16 +75,19 @@ cd MENdel_root
 6. **Examples**
 
    - SpCas9, Ensembl, Unix OS:
+   
    ```
    python MENdelScript.py EnsemblExample.csv T NGG -3 0 F NA ens ENSDART00000011520 1.5 F F F
    ```
    
    - Cas12a, Ensembl, Windows:
+   
    ```
    python Windows_MENdelScript.py EnsemblCas12aExample.csv T TTTN 18 5 F NA ens ENSDART00000011520 1.5 F F F
    ```
 
    - TALEN (left arm: 15 nts, spacer: 16 nts; right arm 18 nts), GenBank, Mac:
+   
    ```
    python MENdelScript.py GenBankTalenExample.csv F NA 0 0 T 15/16/18 gb AY214391.1 1.5 F F F
    ```
