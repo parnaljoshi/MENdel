@@ -8,17 +8,15 @@ def runMenthu(args):
     #subprocess.run(["Rscript", "ExampleRScript.R"])
     menthudir = ''
     lindeldir = ''
-    for i in os.listdir():
+    for i in os.listdir("../"):
         if "MENTHU" in i:
             menthudir = i
         elif "Lindel" in i:
             lindeldir = i
-    os.chdir(menthudir)
+    os.chdir("../"+menthudir)
     subprocess.run(["Rscript", "menthu.R", args.Outfile, args.crispr, args.pam, args.dist2dsb, args.overhang,
                        args.talenOption, args.talenScheme, args.genInputType, args.genInput, args.scoreThreshold,
                         args.T7opt, args.verbose, args.validate])
-    shutil.move(args.Outfile, "..\\"+args.Outfile)
-    os.chdir("..")
     time_to_wait = 20
     time_counter = 0
     while not os.path.exists(args.Outfile):
@@ -26,6 +24,8 @@ def runMenthu(args):
         time_counter += 1
         if time_counter > time_to_wait:
             break
+    shutil.move(args.Outfile, "..\\" + args.Outfile)
+    os.chdir("..")
     runLindel(args.Outfile, lindeldir)
 
 
