@@ -47,7 +47,7 @@ cd MENdel_root
    - For Linux/Mac/Windows using WSL or Cygwin users
    
    ```
-   python MENdelScript.py [-o outFile] [-c CRISPR Option] [-p PAM Sequence] [-d Distance to DSB] [-oh Overhang] [TALEN Option] [TALEN scheme] [Gen Input Type] [Gen Input] [Score Threshold] [T7 opt] [verbose] [validate]
+   python MENdelScript.py [-o outFile] [-c CRISPR Option] [-p PAM Sequence] [-d Distance to DSB] [-oh Overhang] [-to TALEN Option] [-ts TALEN scheme] [-g Gen Input Type] [-i Gen Input] [-st Score Threshold] [-t7 T7 opt] [-v verbose] [-va validate]
    ```
    
    "python" tells the system to use ```python``` to execute ```MENdelScript.py``` (or ```Windows_MENdelScript.py``` for Windows CMD).
@@ -59,7 +59,16 @@ cd MENdel_root
    |**Parameter        |Accepted Values|Default|Explanation** |
    |-----------------  |---------------|-------|--------------|
    |**outFile**        |Character string followed by extension|MENdel_outfile.csv|The name of the file to output your results to. If using a fasta file with multiple sequences, multiple files will be created, using this as a prefix|
-   |**CRSIPR Option**  |T or F         |T      |T or F Flags the system to use CRISPR nuclease processing. If this option is T (true) "TALEN Option" must be F (false)|
-   |**PAM Sequence**   |A PAM sequence |NGG    |The PAM sequence for the CRISPR sequence. Ambiguous nucleotides are allowed. Using N will scan every possible cut site in the target sequence. This parameter must be present, but is not used, if "CRISPR Option" is false (i.e., you can put a 0 or NA in this spot.)|
-   |**Distance to DSB**|Integer      |-3     |The distance from the PAM sequence to the DSB site. For DSBs upstream of a PAM, use a negative value (e.g., -3 for SpCa9); for downstream, use a positive value (e.g., 18 for Cas12a.) This parameter must be present, but is not used, if "CRISPR Option" is false (i.e., you can put a 0 or NA in this spot.)|
+   |**CRSIPR Option**  |T or F         |T      |T or F Flags the system to use CRISPR nuclease processing. If this option is T (true) "TALEN Option" must be F (false). **Must be T for MENdel**|
+   |**PAM Sequence**   |A PAM sequence |NGG    |The PAM sequence for the CRISPR sequence. Ambiguous nucleotides are allowed. Using N will scan every possible cut site in the target sequence. This parameter must be present, but is not used, if "CRISPR Option" is false (i.e., you can put a 0 or NA in this spot.). **Must be NGG for MENdel**|
+   |**Distance to DSB**|Integer      |-3       |The distance from the PAM sequence to the DSB site. For DSBs upstream of a PAM, use a negative value (e.g., -3 for SpCa9); for downstream, use a positive value (e.g., 18 for Cas12a.) This parameter must be present, but is not used, if "CRISPR Option" is false (i.e., you can put a 0 or NA in this spot.)|
+   |**Overhang**       |Integer      |0        |Integer >= 0 The length of 5' overhang produced by the nuclease (e.g., 5 for Cas12a). Use 0 for blunt-cutting nucleases. This parameter must be present, but is not used, if "CRISPR Option" is false (i.e., you can put a 0 or NA in this spot.)|
+   |**Talen Option**   |T or F       |F        |Flags the system to use TALEN processing. If this option is T (true), "CRISPR Option" must be F (false). **Must be F for MENdel**|
+   |**Talen Scheme**   |15-18/14 or 16/15-18 or 0/NA|0 |The left arm length, spacer length, and right arm length to use when searching for TALEN locations. E.g., for a TALEN with arms 15 nt long, with spacer 14 nt, use 15/14/15. TALEN arms can be 15-18 nt in length; the spacer should be 14 OR 16 nt in length (15 is not allowed for the spacer) This parameter must be present, but is not used, if "TALEN Option" is false (i.e., you can put a 0 or NA in this spot.). **Must be 0 or NA for MENdel**|
+   |**Gen Input type** |gb ens seq file|gb     |Flags the system to get a GenBank/RefSeq ID (gb), Ensembl ID (ens), DNA sequence (seq), or to expect a FASTA file (file)|
+   |**Gen Input**      |Accession/Sequence/File|ExampleID|Provide the accession for GenBank/RefSeq/Ensembl inputs, file name for "file" option, or DNA sequence for "seq". If the file name has spaces in it, put this parameter in quotes.|
+   |**Score Threshold**|Integer>1    |1.0      |Only output results with MENTHU score above this threshold. Default is 1.0. We recommend to only use sites with score >= 1.5|
+   |**T7 Opt**         |T or F       |F        |If T (true), only displays results where the gRNA is compatible with T7-cloning.|
+   |**Verbose**        |T or F       |F        |If T (true), outputs progress messags to the console.|
+   |**Validate**       |T or F       |F        |If T (true), checks the command line arguments to make sure they are all valid (this may take some time); if F, skip validation checks.|
 
