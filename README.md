@@ -29,15 +29,25 @@ cd MENdel_root
    ```
    
    Alternatively, use the green "Code" button in the upper right corner and choose "Download ZIP"
+
+4. **Running MENdel**
+
+   MENdel-command-line can be run from Unix-like command lines (Linux, Mac, Cygwin on Windows) or Windows CMD. However, due to end-of-line conversion differences between Unix and DOS for MENTHU, **you must use MENdelScript.py on Linux, Mac, and Cygwin, and Windows_MENdelScript.py in Windows CMD**. 
+
+Check to make sure you're using the correct command for your system!
+
+MENTHU-command-line can be run using the following syntax:
    
    - For Windows users
    
    ```
-   python Windows_MENdelScript.py
+   python Windows_MENdelScript.py [outFile] [CRISPR Option] [PAM Sequence] [Distance to DSB] [Overhang] [TALEN Option] [TALEN scheme] [Gen Input Type] [Gen Input] [Score Threshold] [T7 opt] [verbose] [validate]
    ```
    
    - For Linux/Mac/Windows using WSL or Cygwin users
    
    ```
-   python MENdelScript.py
+   python MENdelScript.py [outFile] [CRISPR Option] [PAM Sequence] [Distance to DSB] [Overhang] [TALEN Option] [TALEN scheme] [Gen Input Type] [Gen Input] [Score Threshold] [T7 opt] [verbose] [validate]
    ```
+   
+"Rscript" tells the system to use ```R``` to execute ```menthu.R``` (or ```menthu-cmd.R``` for Windows CMD).
