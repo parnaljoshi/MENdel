@@ -77,17 +77,17 @@ cd MENdel_root
    - SpCas9, Ensembl, Unix OS:
    
    ```
-   python MENdelScript.py EnsemblExample.csv T NGG -3 0 F NA ens ENSDART00000011520 1.5 F F F
+   python MENdelScript.py EnsemblExample.csv T NGG -3 0 F 0 ens ENSDART00000011520 1.5 F F F
    ```
    
    - Cas12a, Ensembl, Windows:
    
    ```
-   python Windows_MENdelScript.py EnsemblCas12aExample.csv T TTTN 18 5 F NA ens ENSDART00000011520 1.5 F F F
+   python Windows_MENdelScript.py EnsemblCas12aExample.csv T NGG 18 5 F NA ens ENSDART00000011520 1.0 F F F
    ```
 
-   - TALEN (left arm: 15 nts, spacer: 16 nts; right arm 18 nts), GenBank, Mac:
+   - CRISPR, GenBank, Mac:
    
    ```
-   python MENdelScript.py GenBankTalenExample.csv F NA 0 0 T 15/16/18 gb AY214391.1 1.5 F F F
+   python MENdelScript.py GenBankTalenExample.csv T NGG 0 0 F 0 gb AY214391.1 1.5 F F F
    ```
