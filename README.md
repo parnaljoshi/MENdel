@@ -15,9 +15,11 @@ cd MENdel_root
 
    Lindel requires Python installation.
    
-   (Include instructions to install Python)
+   Unix users will have Python pre-installed on their systems, however follow instructions given at https://docs.python.org/3/using/unix.html for any additional features installation
    
-   Follow instructions at https://github.com/shendurelab/Lindel to install Lindel within the directory MENdel_root
+   Windows users can follow instructions to install Python given at https://docs.python.org/3/using/windows.html
+   
+   After successful setup of Python, follow instructions at https://github.com/shendurelab/Lindel to install Lindel within the directory MENdel_root
 
 3. **MENdel and required Python packages installation**
 
