@@ -1,6 +1,6 @@
 # MENdel
 
-this repository contains python scripts for running MENTHU and Lindel tools via commandline interface, to generate the MENdel output. MENdel is compatible with Linux, Mac, Windows (using Cygwin), and Windows CMD. In order to run MENdel, it is required that the user has MENTHU-command-line and Lindel cloned locally. Follow the instructions given below to install each of these tools.
+This repository contains python scripts for running MENdel via a commandline interface. MENdel is a binary classifier that predicts the occurrence of Microhomology-Mediated End Joining (MMEJ) or 1bp-insertion derived single majority outcomes (SMOs) as a result of targeted DNA double strand break repair (DSBR). SMOs are DSBR outcomes where a single sequence is represented at a frequency of 0.50 or higher. MENdel combines the MMEJ-deletion predictions of MENTHU (Mann & Martínez-Gálvez et al., *Nucleic Acids Research*, 2019) and the insertion predictions of Lindel (Chen et al., *Nucleic Acids Research*, 2019) to generate SMO predictions. MENdel is compatible with Linux, Mac, Windows (using Cygwin), and Windows CMD. To run MENdel, it is required that the user has MENTHU-command-line and Lindel cloned locally. Follow the instructions given below to install each of these tools.
 
 ```
 mkdir MENdel_root
@@ -13,11 +13,9 @@ cd MENdel_root
 
 2. **Lindel installation**
 
-   Lindel requires Python installation.
+   Lindel is compatible with ```Python2.7``` and ```Python3.5``` or higher. Follow instructions at https://www.python.org/ or https://www.anaconda.com/ for installation.
    
-   (Include instructions to install Python)
-   
-   Follow instructions at https://github.com/shendurelab/Lindel to install Lindel within the directory MENdel_root
+   Follow instructions at https://github.com/shendurelab/Lindel to install Lindel within the directory MENdel_root.
 
 3. **MENdel and required Python packages installation**
 
@@ -68,7 +66,7 @@ cd MENdel_root
    
 5. **Parameter explanation**
 
-   The parameters are explained below. Each parameter is delimited by a space. Parameter values should not have spaces; if you want to put spaces in the output file name, the name should be in quotes, e.g. "output File.csv". Parameter values (including strings) do not have to be in quotes, except for the output file name exception. All parameters values can be kept to default with the exception of output file name, gen input type and gen input
+   The parameters are explained below. Each parameter is delimited by a space. Parameter values should not have spaces; if you want to put spaces in the output file name, the name should be in quotes, e.g. "output File.csv". Parameter values (including strings) do not have to be in quotes, except for the output file name exception. All parameters values can be kept to default with the exception of output file name, gen input type, and gen input
    
    |**Parameter        |Accepted Values|Default|Explanation** |
    |-----------------  |---------------|-------|--------------|
@@ -77,13 +75,13 @@ cd MENdel_root
    |**PAM Sequence**   |A PAM sequence |NGG    |The PAM sequence for the CRISPR sequence. Ambiguous nucleotides are allowed. Using N will scan every possible cut site in the target sequence. This parameter must be present, but is not used, if "CRISPR Option" is false (i.e., you can put a 0 or NA in this spot.). **Must be NGG for MENdel**|
    |**Distance to DSB**|Integer      |-3       |The distance from the PAM sequence to the DSB site. For DSBs upstream of a PAM, use a negative value (e.g., -3 for SpCa9); for downstream, use a positive value (e.g., 18 for Cas12a.) This parameter must be present, but is not used, if "CRISPR Option" is false (i.e., you can put a 0 or NA in this spot.)|
    |**Overhang**       |Integer      |0        |Integer >= 0 The length of 5' overhang produced by the nuclease (e.g., 5 for Cas12a). Use 0 for blunt-cutting nucleases. This parameter must be present, but is not used, if "CRISPR Option" is false (i.e., you can put a 0 or NA in this spot.)|
-   |**Talen Option**   |T or F       |F        |Flags the system to use TALEN processing. If this option is T (true), "CRISPR Option" must be F (false). **Must be F for MENdel**|
-   |**Talen Scheme**   |15-18/14 or 16/15-18 or 0/NA|0 |The left arm length, spacer length, and right arm length to use when searching for TALEN locations. E.g., for a TALEN with arms 15 nt long, with spacer 14 nt, use 15/14/15. TALEN arms can be 15-18 nt in length; the spacer should be 14 OR 16 nt in length (15 is not allowed for the spacer) This parameter must be present, but is not used, if "TALEN Option" is false (i.e., you can put a 0 or NA in this spot.). **Must be 0 or NA for MENdel**|
-   |**Gen Input type** |gb ens seq file|gb     |Flags the system to get a GenBank/RefSeq ID (gb), Ensembl ID (ens), DNA sequence (seq), or to expect a FASTA file (file)|
+   |**TALEN Option**   |T or F       |F        |Flags the system to use TALEN processing. If this option is T (true), "CRISPR Option" must be F (false). **Must be F for MENdel**|
+   |**TALEN Scheme**   |15-18/14 or 16/15-18 or 0/NA|0 |The left arm length, spacer length, and right arm length to use when searching for TALEN locations. E.g., for a TALEN with arms 15 nt long, with spacer 14 nt, use 15/14/15. TALEN arms can be 15-18 nt in length; the spacer should be 14 OR 16 nt in length (15 is not allowed for the spacer). This parameter must be present, but is not used, if "TALEN Option" is false (i.e., you can put a 0 or NA in this spot.). **Must be 0 or NA for MENdel**|
+   |**Gen Input type** |gb ens seq file|gb     |Flags the system to get a GenBank/RefSeq ID (gb), Ensembl ID (ens), pasted DNA sequence (seq), or to expect a FASTA file (file)|
    |**Gen Input**      |Accession/Sequence/File|ExampleID|Provide the accession for GenBank/RefSeq/Ensembl inputs, file name for "file" option, or DNA sequence for "seq". If the file name has spaces in it, put this parameter in quotes.|
    |**Score Threshold**|Integer>1    |1.0      |Only output results with MENTHU score above this threshold. Default is 1.0. We recommend to only use sites with score >= 1.5|
    |**T7 Opt**         |T or F       |F        |If T (true), only displays results where the gRNA is compatible with T7-cloning.|
-   |**Verbose**        |T or F       |F        |If T (true), outputs progress messags to the console.|
+   |**Verbose**        |T or F       |F        |If T (true), outputs progress messages to the console.|
    |**Validate**       |T or F       |F        |If T (true), checks the command line arguments to make sure they are all valid (this may take some time); if F, skip validation checks.|
 
 6. **Examples**
