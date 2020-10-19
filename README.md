@@ -95,7 +95,7 @@ cd MENdel_root
    - Ensembl, Windows:
    
    ```
-   python Windows_MENdelScript.py -o EnsemblCas12aExample.csv -g ens -i ENSDART00000011520 -st 1.5
+   python Windows_MENdelScript.py -o EnsemblExample.csv -g ens -i ENSDART00000011520 -st 1.5
    ```
 
    - GenBank, Mac:
