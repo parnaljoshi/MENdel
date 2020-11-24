@@ -9,7 +9,7 @@ cd MENdel_root
 
 1. **MENTHU-command-line installation**
    
-   Follow instructions at https://github.com/parnaljoshi/MENTHU-command-line to install the commandline version of MENTHU within the previously created directory MENdel_root. The README file contains instructions to download and install R and necessary R packages to run MENTHU, if not already present.
+   Follow instructions at https://github.com/FriedbergLab/MENTHU-command-line to install the commandline version of MENTHU within the previously created directory MENdel_root. The README file contains instructions to download and install R and necessary R packages to run MENTHU, if not already present.
 
 2. **Lindel installation**
 
@@ -22,7 +22,7 @@ cd MENdel_root
    Navigate to the previously created directory MENdel_root and follow these instructions to install scripts to run MENdel.
    
    ```
-   git clone https://github.com/parnaljoshi/MENdel/
+   git clone https://github.com/FriedbergLab/MENdel/
    cd MENdel
    ```
    
